@@ -1,0 +1,44 @@
+$primary-color: #f57284;
+
+.month-panel {
+    color: #333;
+    background-color: #fff;
+    table {
+        width: 100%;
+        .week-item,
+        .date-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-width: 32px;
+            height: 28px;
+            border-radius: 2px;
+            font-size: 14px;
+        }
+        .week-item {
+            &.is-weekend {
+                color: $primary-color;
+            }
+        }
+        .date-item {
+            cursor: pointer;
+            &.is-today {
+                color: $primary-color;
+            }
+            &.is-prev-month,
+            &.is-next-month {
+                color: #cecece;
+                cursor: not-allowed;
+            }
+            &.is-selected {
+                color: #ffffff;
+                background-color: $primary-color;
+                &.is-prev-month,
+                &.is-next-month {
+                    background-color: #cecece;
+                }
+            }
+        }
+    }
+}

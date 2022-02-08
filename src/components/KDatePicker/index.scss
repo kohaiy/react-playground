@@ -1,0 +1,49 @@
+$primary-color: #f57284;
+
+.k-date-picker {
+    padding: 12px 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    user-select: none;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        .header-btn {
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .header-title {
+            display: flex;
+            justify-content: center;
+            .header-title-btn {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                color: #999999;
+                cursor: pointer;
+                & + .header-title-btn {
+                    margin-left: 12px;
+                }
+                &.is-selected {
+                    color: #333;
+                    font-size: 1.05em;
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        left: -2px;
+                        right: -2px;
+                        bottom: 0;
+                        height: 2px;
+                        background-color: #f57284;
+                    }
+                }
+            }
+        }
+    }
+}
+@import "./month-panel.scss";
