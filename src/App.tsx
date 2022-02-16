@@ -1,5 +1,7 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import '@/App.scss'
+import { Overlay } from "@kohui/react";
+import { useState } from "react";
 
 const routeMap = import.meta.globEager('./routes/*.tsx');
 const routes = Object.keys(routeMap).map(key => routeMap[key].default as RouteOptions);
@@ -7,8 +9,11 @@ console.log(routes);
 
 
 function App() {
+  const [visible, setVisible] = useState(false);
   return (
     <BrowserRouter>
+      <button onClick={() => setVisible(true)}>Click</button>
+      <Overlay visible={visible} onClick={() => setVisible(false)} />
       <div className="App">
         <header className="App-header">
           <p>Welcome to <b>React Playground</b>!</p>

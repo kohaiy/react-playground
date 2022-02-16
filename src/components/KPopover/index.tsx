@@ -1,5 +1,5 @@
+import { Overlay } from "@kohui/react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import KOverlay from "../KOverlay";
 
 interface Props {
     content?: React.ReactNode | string;
@@ -52,7 +52,7 @@ const KPopover: React.FC<Props> = (props) => {
         }
     };
     return <div className="k-popover">
-        <KOverlay visible={visible} onClick={handleClick} />
+        <Overlay visible={visible} onClick={handleClick} />
         <div ref={btnRef} className={`k-popover-btn ${visible && 'is-active'}`}
             onClick={handleClick}>{props.children}</div>
         <div ref={contentRef}
